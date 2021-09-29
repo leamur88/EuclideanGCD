@@ -20,7 +20,10 @@ if __name__ == '__main__':
         print("You would like to find the gc of ", x, " and ", n, "? [y/n] ", sep='', end='')
         response = input()
         if response == "y" or response == "yes":
-            gcd = find_gcd(x,n)
+            if x > n:
+                gcd = find_gcd(n,x)
+            else:
+                gcd = find_gcd(x,n)
             if x % gcd == 0 and n % gcd == 0:
                 print("The GCD is: ", gcd, "!", sep='')
                 break
