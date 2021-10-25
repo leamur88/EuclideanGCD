@@ -8,24 +8,29 @@ def find_gcd(x, n):
         temp = x
         multipliers.append(math.floor(n / x))
         x = (n % x)
-        print("Step ", i, ": ", n, " = ", multipliers[i], "(", temp, ")", " + ", x, sep='')
+        # print("Step ", i, ": ", n, " = ", multipliers[i], "(", temp, ")", " + ", x, sep='')
         n = temp
         i += 1
     return n
+
+
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    while 1:
-        x = int(input("Please input the first number you want to find the gcd for: "))
-        n = int(input("Please input the other number you want to find the gcd for: "))
-        print("You would like to find the gc of ", x, " and ", n, "? [y/n] ", sep='', end='')
-        response = input()
-        if response == "y" or response == "yes":
-            if x > n:
-                gcd = find_gcd(n,x)
-            else:
-                gcd = find_gcd(x,n)
-            if x % gcd == 0 and n % gcd == 0:
-                print("The GCD is: ", gcd, "!", sep='')
-                break
-            else:
-                print("Unfortunately the GCD could not be calculated")
+    for i in range(1, 15):
+        x = i + 1
+        n = math.pow(i, 4) + 4
+        c = n * 3
+        if x > n:
+            gcdL = find_gcd(n, x)
+        else:
+            gcdL = find_gcd(x, n)
+        if x > 3:
+            gcdF = find_gcd(3, x)
+        else:
+            gcdF = find_gcd(x, 3)
+        if x > c:
+            gcdC = find_gcd(c, x)
+        else:
+            gcdC = find_gcd(x, c)
+
+        print("N: ", i, "; N+1: ", x, "; n^4 + 4: ", n, "; gcd(n+1,3): ", gcdF, "; gcd(n+1,n^4+4): ", gcdL,"; gcd(n+1,3n^4+12): ", gcdC, sep="")
