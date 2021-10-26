@@ -16,7 +16,7 @@ def find_gcd(x, n):
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    for i in range(1, 15):
+    for i in range(1, 30):
         x = i + 1
         n = math.pow(i, 4) + 4
         c = n * 3
@@ -32,5 +32,8 @@ if __name__ == '__main__':
             gcdC = find_gcd(c, x)
         else:
             gcdC = find_gcd(x, c)
+        gcdTran = find_gcd(x,15)
 
-        print("N: ", i, "; N+1: ", x, "; n^4 + 4: ", n, "; gcd(n+1,3): ", gcdF, "; gcd(n+1,n^4+4): ", gcdL,"; gcd(n+1,3n^4+12): ", gcdC, sep="")
+        print("N: ", i, " GCD: ", gcdTran, sep="")
+
+        #print("N: ", i, "; N+1: ", x, "; n^4 + 4: ", n, "; gcd(n+1,3): ", gcdF, "; gcd(n+1,n^4+4): ", gcdL,"; gcd(n+1,3n^4+12): ", gcdC, sep="")
