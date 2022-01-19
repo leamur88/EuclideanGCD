@@ -17,7 +17,7 @@ if __name__ == '__main__':
     while 1:
         x = int(input("Please input the first number you want to find the gcd for: "))
         n = int(input("Please input the other number you want to find the gcd for: "))
-        print("You would like to find the gc of ", x, " and ", n, "? [y/n] ", sep='', end='')
+        print("You would like to find the gcd of ", x, " and ", n, "? [y/n] ", sep='', end='')
         response = input()
         if response == "y" or response == "yes":
             if x > n:
